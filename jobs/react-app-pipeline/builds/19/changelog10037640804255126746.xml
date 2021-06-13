@@ -1,0 +1,11 @@
+commit c06b127174ef688e71c80bc6b69a0f899891ccc6
+tree aa52a2f45d4cfb2221b47c371d8ad4391abfc39c
+parent 9e05dc2f15666ac0c417e73610943fa319107515
+author Ramy Reda <ramy.r.kamel@gmail.com> 2021-06-13 02:16:06 +0200
+committer Ramy Reda <ramy.r.kamel@gmail.com> 2021-06-13 02:16:06 +0200
+
+    update Jenkinsfile
+
+
+:100644 100644 2d603a51c6eea94597bf3a0652048f4f538e14a3 0e300ffbf132cb8df80a3b848c42a4901f190343 M	Dockerfile
+:100644 100644 ddc7ffab99479aacff709c4609968c812727f5cb 6ad6c479bf65b890c6b7cef9226feaa59160ccba M	Jenkinsfile

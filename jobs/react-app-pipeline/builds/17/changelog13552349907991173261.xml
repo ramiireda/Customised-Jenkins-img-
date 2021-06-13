@@ -1,0 +1,9 @@
+commit 6f70c40aa9c2f702e598a850758b4c496e76d6c1
+tree 4df1d8e9c45ef04b11f9d7740c8735f13cfc3ec2
+parent 161ebde77bf1e889c7cec4f73d45da833be805d5
+author ramiireda <30408141+ramiireda@users.noreply.github.com> 2021-06-13 01:23:44 +0200
+committer GitHub <noreply@github.com> 2021-06-13 01:23:44 +0200
+
+    Update Jenkinsfile
+
+:100644 100644 65811bb17f36a61a2716e0bdcc0807f2cb0b4e95 560190ab707ad261fbef20d416cce80fe91b52c5 M	Jenkinsfile

@@ -1,0 +1,63 @@
+FROM jenkins/jenkins:lts-jdk11
+
+USER root
+RUN apt-get update && apt-get install -y apt-transport-https \
+       ca-certificates curl gnupg2 \
+       software-properties-common
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+RUN apt-key fingerprint 0EBFCD88
+RUN add-apt-repository \
+       "deb [arch=amd64] https://download.docker.com/linux/debian \
+       $(lsb_release -cs) stable"
+RUN apt-get update && apt-get install -y docker-ce-cli
+RUN apt-get install -y sudo
+RUN apt-get install -y wget
+RUN wget -O /usr/local/bin/relay https://storage.googleapis.com/webhookrelay/downloads/relay-linux-amd64
+RUN chmod +wx /usr/local/bin/relay
+
+RUN groupadd docker
+#RUN chown "$USER":"$USER" /home/"$USER"/.docker -R
+#RUN chmod g+rwx "$HOME/.docker" -R
+#USER jenkins
+RUN usermod -aG docker jenkins
+#USER root
+RUN newgrp docker 
+#RUN cat /usr/lib/systemd/system/docker.service
+#RUN systemctl start docker
+#RUN systemctl enable docker.service
+
+#RUN systemctl enable containerd.service
+#RUN service --status-all
+#RUN service docker start
+RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
+
+
+RUN relay login -k ca9017dd-fc03-4183-bc11-866cc100c17f -s 7WNfAXBfk46h
+
+#To use credentials as an environment variables:           
+
+ENV RELAY_KEY=ca9017dd-fc03-4183-bc11-866cc100c17f
+ENV RELAY_SECRET=7WNfAXBfk46h
+
+RUN relay forward --bucket jenkins-url http://localhost:8084/webhook
+
+
+USER jenkins
+
+COPY --chown=jenkins:jenkins plugins.txt /usr/share/jenkins/ref/plugins.txt
+RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
+
+# so we can use jenkins cli
+COPY config/jenkins.properties /usr/share/jenkins/ref/
+
+# lets configure Jenkins with some defaults
+COPY config/*.xml /usr/share/jenkins/ref/
+
+#COPY fingerprints /usr/share/jenkins/ref/fingerprints/
+COPY users /usr/share/jenkins/ref/users/
+COPY jobs /usr/share/jenkins/ref/jobs/
+
+ENV JENKINS_OPTS --httpPort=8084 --httpsPort=8083
+#ENV JENKINS_URL 
+EXPOSE 8083
+EXPOSE 8084

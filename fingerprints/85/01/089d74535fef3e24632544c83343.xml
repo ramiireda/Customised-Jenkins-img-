@@ -1,0 +1,26 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2021-06-06 08:37:21.917 UTC</timestamp>
+  <original>
+    <name>Angular-HelloWorld</name>
+    <number>4</number>
+  </original>
+  <md5sum>8501089d74535fef3e24632544c83343</md5sum>
+  <fileName>Docker image sha256:8501089d74535fef3e24632544c833432b1009b970dc2534198e7cdae181aa8d</fileName>
+  <usages/>
+  <facets>
+    <org.jenkinsci.plugins.docker.commons.fingerprint.DockerAncestorFingerprintFacet plugin="docker-commons@1.17">
+      <timestamp>1622968641642</timestamp>
+      <imageId>sha256:8501089d74535fef3e24632544c833432b1009b970dc2534198e7cdae181aa8d</imageId>
+      <usages>
+        <entry>
+          <string>Angular-HelloWorld</string>
+          <ranges>4</ranges>
+        </entry>
+      </usages>
+      <ancestorImageIds class="sorted-set">
+        <string>sha256:20fb3fc298b5e01c0a01743a363a28a679d6987afe18b8427e54193f28169a69</string>
+      </ancestorImageIds>
+    </org.jenkinsci.plugins.docker.commons.fingerprint.DockerAncestorFingerprintFacet>
+  </facets>
+</fingerprint>
