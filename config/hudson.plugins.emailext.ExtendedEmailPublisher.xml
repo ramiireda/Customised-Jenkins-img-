@@ -1,9 +1,11 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <hudson.plugins.emailext.ExtendedEmailPublisherDescriptor plugin="email-ext@2.83">
   <mailAccount>
-    <smtpPort>25</smtpPort>
-    <smtpPassword>{AQAAABAAAAAQxGfeI9Rr3AH5Tod5lpCMy/TJ9U3emBxa3Y+Vs21lzXE=}</smtpPassword>
-    <useSsl>false</useSsl>
+    <smtpHost>smtp.gmail.com</smtpHost>
+    <smtpPort>465</smtpPort>
+    <smtpUsername>ramy.r.kamel@gmail.com</smtpUsername>
+    <smtpPassword>{AQAAABAAAAAQZrwviTLNUdt2p9Ke+4zw2VSYtChcR7X2jZZd17AuTbo=}</smtpPassword>
+    <useSsl>true</useSsl>
     <useTls>false</useTls>
     <advProperties></advProperties>
     <defaultAccount>true</defaultAccount>
@@ -32,5 +34,5 @@ Check console output at $BUILD_URL to view the results.</defaultBody>
   <debugMode>false</debugMode>
   <requireAdminForTemplateTesting>false</requireAdminForTemplateTesting>
   <enableWatching>false</enableWatching>
-  <enableAllowUnregistered>false</enableAllowUnregistered>
+  <enableAllowUnregistered>true</enableAllowUnregistered>
 </hudson.plugins.emailext.ExtendedEmailPublisherDescriptor>

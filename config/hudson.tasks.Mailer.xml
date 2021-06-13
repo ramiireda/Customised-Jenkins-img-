@@ -1,7 +1,13 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <hudson.tasks.Mailer_-DescriptorImpl plugin="mailer@1.34">
-  <defaultSuffix></defaultSuffix>
-  <useSsl>false</useSsl>
+  <defaultSuffix>@gmail.com</defaultSuffix>
+  <authentication>
+    <username>ramy.r.kamel@gmail.com</username>
+    <password>{AQAAABAAAAAQCnkpbrTXYVd/CNl3RYok1b8R0KrPWtvsMSh4DV59KKA=}</password>
+  </authentication>
+  <smtpHost>smtp.gmail.com</smtpHost>
+  <useSsl>true</useSsl>
   <useTls>false</useTls>
+  <smtpPort>465</smtpPort>
   <charset>UTF-8</charset>
 </hudson.tasks.Mailer_-DescriptorImpl>
